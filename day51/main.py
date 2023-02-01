@@ -7,12 +7,11 @@ from selenium.common.exceptions import NoSuchElementException
 
 import config
 
-# Note: expects Google Chrome and the appropriate ChromeDriver to be properly installed on the system
-# https://chromedriver.chromium.org/downloads
 
-# change to "@Comcast" or whatever the company's Twitter handle is
-ISP_NAME = "Internet Provider"
-# "guaranteed" internet speeds in Mbps
+
+
+ISP_NAME = "AIRTEL"
+
 MIN_DOWNLOAD_SPEED = 300
 MIN_UPLOAD_SPEED = 30
 SPEEDTEST_URL = "https://www.speedtest.net/"

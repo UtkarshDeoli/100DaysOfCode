@@ -1,8 +1,8 @@
 # Mail Merge
 
-LETTER_TEMPLATE = "./Input/Letters/starting_letter.txt"
-INVITED_NAMES = "./Input/Names/invited_names.txt"
-OUTPUT_FOLDER = "./Output/ReadyToSend/"
+LETTER_TEMPLATE = "c:/Users/utkar/OneDrive/Documents/100DaysOfCode/day24/Input/Letters/starting_letter.txt"
+INVITED_NAMES = "c:/Users/utkar/OneDrive/Documents/100DaysOfCode/day24/Input/Names/invited_names.txt"
+OUTPUT_FOLDER = "c:/Users/utkar/OneDrive/Documents/100DaysOfCode/day24/Output/ReadyToSend/"
 
 
 def load_template(text_file):

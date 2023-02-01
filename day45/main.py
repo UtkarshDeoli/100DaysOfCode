@@ -9,8 +9,6 @@ TEXT_FILE = "./movies.txt"
 
 def load_site():
     response = requests.get(url=PAGE_URL)
-    # check the encoding of the file, this returned "ISO-8859-1"
-    # print(response.encoding)
     response.raise_for_status()
     soup = BeautifulSoup(response.text, "html.parser")
     all_entries = soup.find_all(name="h3", class_="title")
@@ -18,14 +16,10 @@ def load_site():
 
 
 def sort_entries(entries):
-    # the #1 movie is missing the "1)" part, so just to be safe, strip and re-generate from all entries
     rank = 1
     output_text = ""
-    # reverse the list, a simple sort() won't work here
     for entry in entries[::-1]:
         line = entry.get_text()
-        # fix the inconsistencies, e.g. #12, where "12: " is used instead of "12) "
-        # might as well do it for all entries, check all possible lengths, i.e. 1), 10) and also 100)
         for i in range(1, 4):
             if line[i:i+2] == ": ":
                 # split the string into separate characters

@@ -7,22 +7,20 @@ from bs4 import BeautifulSoup
 
 import config
 
-# using the product suggested by the course
-PAGE_URL = "https://www.amazon.com/Instant-Pot-Duo-Evo-Plus/dp/B07W55DDFB/"
+PAGE_URL = "https://www.amazon.in/Crucial-PC4-25600-SODIMM-260-Pin-Memory/dp/B08C4Z69LN/"
 # get a notification whenever the price falls below the following
-TARGET_PRICE = 100
-CURRENCY = "$"
-# default Mailtrap server settings
+TARGET_PRICE = 1000
+CURRENCY = "Rs."
+
 SMTP_SERVER = "smtp.mailtrap.io"
 SMTP_PORT = "2525"
-# not really necessary, but might as well format the email properly
+
 SENDER_NAME = "Amazon Price Tracker"
 SENDER_ADDRESS = "pricetracker@mydomain.zyx"
 SUBJECT_TEXT = "Amazon Price Tracker Price Alert"
-# "Amazon Price Tracker Price Alert Recipient" sounded a little impersonal...
-# so using one of the names from Day 40 instead
-RECEIVER_NAME = "Anita Bath"
-RECEIVER_ADDRESS = "myemail@mydomain.zyx"
+
+RECEIVER_NAME = "Utkarsh Deoli"
+RECEIVER_ADDRESS = "utkarsh.deoli@gmail.com"
 
 
 def get_price():
@@ -40,7 +38,7 @@ def get_price():
     raw_price = result.get_text()
     # just return the value
     try:
-        price_num = float(raw_price.replace("$", ""))
+        price_num = float(raw_price.replace("Rs.", ""))
     except ValueError:
         return None
     else:
